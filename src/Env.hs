@@ -1,17 +1,18 @@
 {-# OPTIONS_GHC -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns
     -Wredundant-constraints #-}
-{-# LANGUAGE OverloadedStrings, PartialTypeSignatures #-}
+{-# LANGUAGE OverloadedStrings     #-}
+{-# LANGUAGE PartialTypeSignatures #-}
 
 module Env
     ( convertBlock
     , splitTerm
     ) where
 
-import Data.Sequence (Seq((:<|), (:|>)), (|>), (<|))
-import qualified Data.Sequence as S
-import Data.Text (Text)
-import qualified Data.Text as T
-import Text.Pandoc.Builder hiding (Example)
+import           Data.Sequence       (Seq ((:<|), (:|>)), (<|), (|>))
+import qualified Data.Sequence       as S
+import           Data.Text           (Text)
+import qualified Data.Text           as T
+import           Text.Pandoc.Builder hiding (Example)
 
 -- | Represents a LaTeX environment.
 data Env = Env
